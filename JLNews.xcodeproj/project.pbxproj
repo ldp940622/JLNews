@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58774D17478D28E7103D5491 /* libPods-JLNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 453B93D5DA373877302E69A8 /* libPods-JLNews.a */; };
+		8D01B6791BFA11BC00C32761 /* JLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D01B6781BFA11BC00C32761 /* JLNetworking.m */; };
 		8D0CB16C1BDCAF45008E9A08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB16B1BDCAF45008E9A08 /* main.m */; };
 		8D0CB16F1BDCAF45008E9A08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB16E1BDCAF45008E9A08 /* AppDelegate.m */; };
 		8D0CB1721BDCAF45008E9A08 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1711BDCAF45008E9A08 /* ViewController.m */; };
@@ -14,6 +16,16 @@
 		8D0CB1771BDCAF45008E9A08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0CB1761BDCAF45008E9A08 /* Images.xcassets */; };
 		8D0CB17A1BDCAF45008E9A08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0CB1781BDCAF45008E9A08 /* LaunchScreen.xib */; };
 		8D0CB1861BDCAF45008E9A08 /* JLNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1851BDCAF45008E9A08 /* JLNewsTests.m */; };
+		8D0CB1911BDCBE4C008E9A08 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1901BDCBE4C008E9A08 /* TableViewCell.m */; };
+		8D0CB1941BDCCAF5008E9A08 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1931BDCCAF5008E9A08 /* ImageTableViewCell.m */; };
+		8D0CB1971BDCD12E008E9A08 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1961BDCD12E008E9A08 /* News.m */; };
+		8D6D85A01BDD02B7009708EC /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D859F1BDD02B7009708EC /* NewsViewController.m */; };
+		8D6D85A31BDD2382009708EC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D85A21BDD2382009708EC /* SearchViewController.m */; };
+		8DACA8F91BFB718800DDBD62 /* NewsNoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DACA8F81BFB718800DDBD62 /* NewsNoImage.png */; };
+		8DC03ADA1BFC59A600793909 /* JLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AD91BFC59A600793909 /* JLDatabase.m */; };
+		8DC03ADD1BFC6D3000793909 /* JLProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03ADC1BFC6D3000793909 /* JLProgressHUD.m */; };
+		8DC03AE21BFCBD8F00793909 /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AE11BFCBD8F00793909 /* FavouriteViewController.m */; };
+		8DC03AE51BFCC52900793909 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AE41BFCC52900793909 /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17840031EEAA53056D8B6962 /* Pods-JLNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLNews/Pods-JLNews.release.xcconfig"; sourceTree = "<group>"; };
+		453B93D5DA373877302E69A8 /* libPods-JLNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JLNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8155A5E64452BEB91E2740C6 /* Pods-JLNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLNews/Pods-JLNews.debug.xcconfig"; sourceTree = "<group>"; };
+		8D01B6771BFA11BC00C32761 /* JLNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNetworking.h; sourceTree = "<group>"; };
+		8D01B6781BFA11BC00C32761 /* JLNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNetworking.m; sourceTree = "<group>"; };
 		8D0CB1661BDCAF45008E9A08 /* JLNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0CB16A1BDCAF45008E9A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0CB16B1BDCAF45008E9A08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +57,25 @@
 		8D0CB17F1BDCAF45008E9A08 /* JLNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0CB1841BDCAF45008E9A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0CB1851BDCAF45008E9A08 /* JLNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLNewsTests.m; sourceTree = "<group>"; };
+		8D0CB18F1BDCBE4C008E9A08 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		8D0CB1901BDCBE4C008E9A08 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		8D0CB1921BDCCAF5008E9A08 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		8D0CB1931BDCCAF5008E9A08 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		8D0CB1951BDCD12E008E9A08 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		8D0CB1961BDCD12E008E9A08 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		8D6D859E1BDD02B7009708EC /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		8D6D859F1BDD02B7009708EC /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		8D6D85A11BDD2382009708EC /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		8D6D85A21BDD2382009708EC /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		8DACA8F81BFB718800DDBD62 /* NewsNoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewsNoImage.png; sourceTree = "<group>"; };
+		8DC03AD81BFC59A600793909 /* JLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLDatabase.h; sourceTree = "<group>"; };
+		8DC03AD91BFC59A600793909 /* JLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLDatabase.m; sourceTree = "<group>"; };
+		8DC03ADB1BFC6D3000793909 /* JLProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLProgressHUD.h; sourceTree = "<group>"; };
+		8DC03ADC1BFC6D3000793909 /* JLProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLProgressHUD.m; sourceTree = "<group>"; };
+		8DC03AE01BFCBD8F00793909 /* FavouriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteViewController.h; sourceTree = "<group>"; };
+		8DC03AE11BFCBD8F00793909 /* FavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteViewController.m; sourceTree = "<group>"; };
+		8DC03AE31BFCC52900793909 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		8DC03AE41BFCC52900793909 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58774D17478D28E7103D5491 /* libPods-JLNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +97,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CAC784878CDE97B8F2C8177 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				453B93D5DA373877302E69A8 /* libPods-JLNews.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85F264DC61270EFDB2164722 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8155A5E64452BEB91E2740C6 /* Pods-JLNews.debug.xcconfig */,
+				17840031EEAA53056D8B6962 /* Pods-JLNews.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8D0CB15D1BDCAF45008E9A08 = {
 			isa = PBXGroup;
 			children = (
 				8D0CB1681BDCAF45008E9A08 /* JLNews */,
 				8D0CB1821BDCAF45008E9A08 /* JLNewsTests */,
 				8D0CB1671BDCAF45008E9A08 /* Products */,
+				85F264DC61270EFDB2164722 /* Pods */,
+				4CAC784878CDE97B8F2C8177 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +137,23 @@
 		8D0CB1681BDCAF45008E9A08 /* JLNews */ = {
 			isa = PBXGroup;
 			children = (
+				8DC03ADF1BFCBC4900793909 /* Model */,
+				8DC03ADE1BFCBC3300793909 /* View */,
+				8DC03AD71BFC598000793909 /* Unitis */,
+				8DACA8F81BFB718800DDBD62 /* NewsNoImage.png */,
 				8D0CB16D1BDCAF45008E9A08 /* AppDelegate.h */,
 				8D0CB16E1BDCAF45008E9A08 /* AppDelegate.m */,
+				8DC03AE31BFCC52900793909 /* BaseViewController.h */,
+				8DC03AE41BFCC52900793909 /* BaseViewController.m */,
 				8D0CB1701BDCAF45008E9A08 /* ViewController.h */,
 				8D0CB1711BDCAF45008E9A08 /* ViewController.m */,
+				8DC03AE01BFCBD8F00793909 /* FavouriteViewController.h */,
+				8DC03AE11BFCBD8F00793909 /* FavouriteViewController.m */,
 				8D0CB1731BDCAF45008E9A08 /* Main.storyboard */,
+				8D6D85A11BDD2382009708EC /* SearchViewController.h */,
+				8D6D85A21BDD2382009708EC /* SearchViewController.m */,
+				8D6D859E1BDD02B7009708EC /* NewsViewController.h */,
+				8D6D859F1BDD02B7009708EC /* NewsViewController.m */,
 				8D0CB1761BDCAF45008E9A08 /* Images.xcassets */,
 				8D0CB1781BDCAF45008E9A08 /* LaunchScreen.xib */,
 				8D0CB1691BDCAF45008E9A08 /* Supporting Files */,
@@ -119,6 +187,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8DC03AD71BFC598000793909 /* Unitis */ = {
+			isa = PBXGroup;
+			children = (
+				8D01B6771BFA11BC00C32761 /* JLNetworking.h */,
+				8D01B6781BFA11BC00C32761 /* JLNetworking.m */,
+				8DC03AD81BFC59A600793909 /* JLDatabase.h */,
+				8DC03AD91BFC59A600793909 /* JLDatabase.m */,
+				8DC03ADB1BFC6D3000793909 /* JLProgressHUD.h */,
+				8DC03ADC1BFC6D3000793909 /* JLProgressHUD.m */,
+			);
+			name = Unitis;
+			sourceTree = "<group>";
+		};
+		8DC03ADE1BFCBC3300793909 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D0CB18F1BDCBE4C008E9A08 /* TableViewCell.h */,
+				8D0CB1901BDCBE4C008E9A08 /* TableViewCell.m */,
+				8D0CB1921BDCCAF5008E9A08 /* ImageTableViewCell.h */,
+				8D0CB1931BDCCAF5008E9A08 /* ImageTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8DC03ADF1BFCBC4900793909 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D0CB1951BDCD12E008E9A08 /* News.h */,
+				8D0CB1961BDCD12E008E9A08 /* News.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0CB1891BDCAF45008E9A08 /* Build configuration list for PBXNativeTarget "JLNews" */;
 			buildPhases = (
+				D0C9317E6D380929522E68AD /* Check Pods Manifest.lock */,
 				8D0CB1621BDCAF45008E9A08 /* Sources */,
 				8D0CB1631BDCAF45008E9A08 /* Frameworks */,
 				8D0CB1641BDCAF45008E9A08 /* Resources */,
+				74A2708EA00E6D61DF188B1B /* Embed Pods Frameworks */,
+				C94A5356CE61ABA716FB2BFA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +306,7 @@
 				8D0CB1751BDCAF45008E9A08 /* Main.storyboard in Resources */,
 				8D0CB17A1BDCAF45008E9A08 /* LaunchScreen.xib in Resources */,
 				8D0CB1771BDCAF45008E9A08 /* Images.xcassets in Resources */,
+				8DACA8F91BFB718800DDBD62 /* NewsNoImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +319,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		74A2708EA00E6D61DF188B1B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLNews/Pods-JLNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C94A5356CE61ABA716FB2BFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLNews/Pods-JLNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C9317E6D380929522E68AD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D0CB1621BDCAF45008E9A08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC03AE21BFCBD8F00793909 /* FavouriteViewController.m in Sources */,
 				8D0CB1721BDCAF45008E9A08 /* ViewController.m in Sources */,
+				8DC03ADD1BFC6D3000793909 /* JLProgressHUD.m in Sources */,
+				8D0CB1911BDCBE4C008E9A08 /* TableViewCell.m in Sources */,
+				8D0CB1971BDCD12E008E9A08 /* News.m in Sources */,
+				8D0CB1941BDCCAF5008E9A08 /* ImageTableViewCell.m in Sources */,
+				8D01B6791BFA11BC00C32761 /* JLNetworking.m in Sources */,
 				8D0CB16F1BDCAF45008E9A08 /* AppDelegate.m in Sources */,
+				8DC03ADA1BFC59A600793909 /* JLDatabase.m in Sources */,
+				8DC03AE51BFCC52900793909 /* BaseViewController.m in Sources */,
 				8D0CB16C1BDCAF45008E9A08 /* main.m in Sources */,
+				8D6D85A31BDD2382009708EC /* SearchViewController.m in Sources */,
+				8D6D85A01BDD02B7009708EC /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +508,11 @@
 		};
 		8D0CB18A1BDCAF45008E9A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8155A5E64452BEB91E2740C6 /* Pods-JLNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,9 +520,11 @@
 		};
 		8D0CB18B1BDCAF45008E9A08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17840031EEAA53056D8B6962 /* Pods-JLNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +583,7 @@
 				8D0CB18B1BDCAF45008E9A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D0CB18C1BDCAF45008E9A08 /* Build configuration list for PBXNativeTarget "JLNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +592,7 @@
 				8D0CB18E1BDCAF45008E9A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
