@@ -37,7 +37,7 @@
 
 - (void)showMessage:(NSString *)message hideDelay:(NSTimeInterval)delay {
     if (nil == message || [message isEqualToString:@""]) {
-        NSLog(@"YFProgressHUD显示空信息.");
+        NSLog(@"显示空信息.");
         [_hud hide:YES];
         return;
     }

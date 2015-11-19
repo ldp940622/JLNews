@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D091E653-C317-4EB7-A55A-CF64C81E0A9D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JLNews</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>71EFFB7203923A8CD5A871B70F621195E7879D24</key>
+		<string>https://github.com/ldp940622/JLNews.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JLNews.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>71EFFB7203923A8CD5A871B70F621195E7879D24</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ldp940622/JLNews.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>71EFFB7203923A8CD5A871B70F621195E7879D24</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>71EFFB7203923A8CD5A871B70F621195E7879D24</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JLNews</string>
+		</dict>
+	</array>
+</dict>
+</plist>
