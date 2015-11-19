@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 Ldp. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BaseViewController.h"
 
-@interface FavouriteViewController : ViewController
+@interface FavouriteViewController : BaseViewController
 
 @end

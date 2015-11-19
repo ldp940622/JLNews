@@ -25,7 +25,7 @@
         _newsDB = [FMDatabase databaseWithPath:[NSString stringWithFormat:@"%@/news.db", DOC_PATH]];
         if ([_newsDB open]) {
             NSError *err;
-            NSString *creatTableSQL = @"CREATE TABLE 'News' ('id' INTEGER PRIMARY KEY NOT NULL , 'title' VARCHAR(30), 'images' VARCHAR(255), 'content' TEXT)";
+            NSString *creatTableSQL = @"CREATE TABLE 'News' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , 'newsID' INTEGER,'title' VARCHAR(30), 'images' VARCHAR(255), 'content' TEXT)";
             if ([_newsDB executeUpdate:creatTableSQL withErrorAndBindings:&err]) {
                 NSLog(@"%@", _newsDB);
                 NSLog(@"成功创建表!");
@@ -55,7 +55,7 @@
 
 #pragma mark - Public Method
 - (void)insertNews:(News *)news success:(void (^)())successBlock failure:(void (^)())failureBlock {
-    NSString *insertSQL = @"INSERT INTO NEWS (id,title,images,content) values (?,?,?,?)";
+    NSString *insertSQL = @"INSERT INTO NEWS (newsID,title,images,content) values (?,?,?,?)";
     if ([_newsDB executeUpdate:insertSQL, news.newsID, news.title, news.images, news.content]) {
         successBlock();
     } else {
@@ -63,16 +63,26 @@
     }
 }
 
+- (BOOL)newsIsExist:(News *)news {
+    NSString *getNews = @"SELECT * FROM NEWS WHERE newsID = (?)";
+    FMResultSet *result = [_newsDB executeQuery:getNews, news.newsID];
+    if ([result next]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 - (NSArray *)getStarNews {
     NSMutableArray *newsArray = [NSMutableArray array];
-    NSString *getNewsSQL = @"SELECT * FROM NEWS";
+    NSString *getNewsSQL = @"SELECT * FROM NEWS ORDER BY id ASC";
     FMResultSet *result = [_newsDB executeQuery:getNewsSQL];
     while ([result next]) {
-        NSDictionary *newsDic = @{ @"id" : [NSNumber numberWithInt:[result intForColumn:@"id"]],
+        NSDictionary *newsDic = @{ @"id" : [NSNumber numberWithInt:[result intForColumn:@"newsID"]],
                                    @"title" : [result stringForColumn:@"title"],
                                    @"images" : [result stringForColumn:@"images"],
                                    @"content" : [result stringForColumn:@"content"] };
-        [newsArray addObject:newsDic];
+        [newsArray insertObject:newsDic atIndex:0];
     }
     return newsArray;
 }

@@ -14,5 +14,6 @@
 + (JLDatabase *)sharedManager;
 
 - (void)insertNews:(News *)news success:(void (^)())successBlock failure:(void (^)())failureBlock;
+- (BOOL)newsIsExist:(News *)news;
 - (NSArray *)getStarNews;
 @end

@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="msJ-hW-zW0">
             <objects>
-                <tabBarController id="edY-O2-F2n" sceneMemberID="viewController">
+                <tabBarController id="edY-O2-F2n" customClass="JLTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3wI-y2-pgj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -27,8 +27,8 @@
         <!--我的收藏-->
         <scene sceneID="bor-OU-Mgf">
             <objects>
-                <navigationController id="ary-TA-ulp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的收藏" id="ccF-J2-Zeu" userLabel="我的收藏"/>
+                <navigationController id="ary-TA-ulp" customClass="JLNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的收藏" image="FavouriteIcon" id="ccF-J2-Zeu" userLabel="我的收藏"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKN-bs-ebO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -350,8 +350,8 @@
         <!--首页-->
         <scene sceneID="faq-Xl-Sdi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3wF-9D-JBv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="2dG-93-TIZ"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3wF-9D-JBv" customClass="JLNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="NewsIcon" id="2dG-93-TIZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YAh-jP-PWG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -498,4 +498,8 @@
             <point key="canvasLocation" x="1831" y="1170"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FavouriteIcon" width="25" height="25"/>
+        <image name="NewsIcon" width="25" height="25"/>
+    </resources>
 </document>

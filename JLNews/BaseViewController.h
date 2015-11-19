@@ -6,7 +6,9 @@
 //  Copyright (c) 2015年 Ldp. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
+#import "News.h"
+#import "MJRefresh.h"
 
 @interface BaseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

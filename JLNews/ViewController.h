@@ -6,16 +6,8 @@
 //  Copyright (c) 2015年 Ldp. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "News.h"
-#import "NewsViewController.h"
-#import "MJRefresh.h"
-#import "JLDatabase.h"
-#import "JLProgressHUD.h"
+#import "BaseViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *newsArr;
+@interface ViewController : BaseViewController
 
-- (void)loadNewData;
 @end

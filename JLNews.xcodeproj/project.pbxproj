@@ -26,6 +26,8 @@
 		8DC03ADD1BFC6D3000793909 /* JLProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03ADC1BFC6D3000793909 /* JLProgressHUD.m */; };
 		8DC03AE21BFCBD8F00793909 /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AE11BFCBD8F00793909 /* FavouriteViewController.m */; };
 		8DC03AE51BFCC52900793909 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AE41BFCC52900793909 /* BaseViewController.m */; };
+		8DC03AE81BFCDD0300793909 /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AE71BFCDD0300793909 /* JLNavigationController.m */; };
+		8DC03AEB1BFCE32600793909 /* JLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AEA1BFCE32600793909 /* JLTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		8DC03AE11BFCBD8F00793909 /* FavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteViewController.m; sourceTree = "<group>"; };
 		8DC03AE31BFCC52900793909 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		8DC03AE41BFCC52900793909 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		8DC03AE61BFCDD0300793909 /* JLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNavigationController.h; sourceTree = "<group>"; };
+		8DC03AE71BFCDD0300793909 /* JLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNavigationController.m; sourceTree = "<group>"; };
+		8DC03AE91BFCE32600793909 /* JLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTabBarController.h; sourceTree = "<group>"; };
+		8DC03AEA1BFCE32600793909 /* JLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,10 @@
 				8DC03AE01BFCBD8F00793909 /* FavouriteViewController.h */,
 				8DC03AE11BFCBD8F00793909 /* FavouriteViewController.m */,
 				8D0CB1731BDCAF45008E9A08 /* Main.storyboard */,
+				8DC03AE91BFCE32600793909 /* JLTabBarController.h */,
+				8DC03AEA1BFCE32600793909 /* JLTabBarController.m */,
+				8DC03AE61BFCDD0300793909 /* JLNavigationController.h */,
+				8DC03AE71BFCDD0300793909 /* JLNavigationController.m */,
 				8D6D85A11BDD2382009708EC /* SearchViewController.h */,
 				8D6D85A21BDD2382009708EC /* SearchViewController.m */,
 				8D6D859E1BDD02B7009708EC /* NewsViewController.h */,
@@ -377,8 +387,10 @@
 				8DC03ADD1BFC6D3000793909 /* JLProgressHUD.m in Sources */,
 				8D0CB1911BDCBE4C008E9A08 /* TableViewCell.m in Sources */,
 				8D0CB1971BDCD12E008E9A08 /* News.m in Sources */,
+				8DC03AEB1BFCE32600793909 /* JLTabBarController.m in Sources */,
 				8D0CB1941BDCCAF5008E9A08 /* ImageTableViewCell.m in Sources */,
 				8D01B6791BFA11BC00C32761 /* JLNetworking.m in Sources */,
+				8DC03AE81BFCDD0300793909 /* JLNavigationController.m in Sources */,
 				8D0CB16F1BDCAF45008E9A08 /* AppDelegate.m in Sources */,
 				8DC03ADA1BFC59A600793909 /* JLDatabase.m in Sources */,
 				8DC03AE51BFCC52900793909 /* BaseViewController.m in Sources */,

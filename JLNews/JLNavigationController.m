@@ -1,22 +1,26 @@
 //
-//  FavouriteViewController.m
+//  JLNavigationController.m
 //  JLNews
 //
-//  Created by 李大鹏 on 15/11/18.
+//  Created by 李大鹏 on 15/11/19.
 //  Copyright (c) 2015年 Ldp. All rights reserved.
 //
 
-#import "FavouriteViewController.h"
-#import "JLDatabase.h"
+#import "JLNavigationController.h"
+#define COLOR(R, G, B, A) ([UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:A])
 
-@interface FavouriteViewController ()
+@interface JLNavigationController ()
 
 @end
 
-@implementation FavouriteViewController
+@implementation JLNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationBar.barTintColor = COLOR(235, 146, 62, 1);
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
     // Do any additional setup after loading the view.
 }
 
@@ -34,14 +38,5 @@
  *  // Pass the selected object to the new view controller.
  * }
  */
-
-- (void)loadNewData {
-    NSArray *arr = [[JLDatabase sharedManager] getStarNews];
-    for (NSDictionary *dic in arr) {
-        [self.newsArray addObject:[News newsWithDict:dic]];
-    }
-    [self.tableView reloadData];
-    [self.tableView.mj_header endRefreshing];
-}
 
 @end

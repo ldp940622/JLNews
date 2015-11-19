@@ -8,9 +8,9 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BaseViewController.h"
-#import "MJRefresh.h"
 #import "TableViewCell.h"
 #import "ImageTableViewCell.h"
+#import "NewsViewController.h"
 
 @interface BaseViewController ()
 
@@ -24,6 +24,7 @@
     __weak typeof(self) weakSelf = self;
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.newsArray removeAllObjects];
         [weakSelf loadNewData];
     }];
 }
@@ -87,7 +88,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NewsViewController *newsVC = [[NewsViewController alloc] init];
     newsVC.news = self.newsArray[indexPath.row];
+    [newsVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:newsVC animated:YES];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
 }
 
 /*
