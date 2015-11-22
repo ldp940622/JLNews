@@ -19,8 +19,8 @@
 		8D0CB1911BDCBE4C008E9A08 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1901BDCBE4C008E9A08 /* TableViewCell.m */; };
 		8D0CB1941BDCCAF5008E9A08 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1931BDCCAF5008E9A08 /* ImageTableViewCell.m */; };
 		8D0CB1971BDCD12E008E9A08 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CB1961BDCD12E008E9A08 /* News.m */; };
+		8D2505211C01EDF500753EC4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2505201C01EDF500753EC4 /* SearchViewController.m */; };
 		8D6D85A01BDD02B7009708EC /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D859F1BDD02B7009708EC /* NewsViewController.m */; };
-		8D6D85A31BDD2382009708EC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D85A21BDD2382009708EC /* SearchViewController.m */; };
 		8DACA8F91BFB718800DDBD62 /* NewsNoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DACA8F81BFB718800DDBD62 /* NewsNoImage.png */; };
 		8DC03ADA1BFC59A600793909 /* JLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03AD91BFC59A600793909 /* JLDatabase.m */; };
 		8DC03ADD1BFC6D3000793909 /* JLProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC03ADC1BFC6D3000793909 /* JLProgressHUD.m */; };
@@ -65,10 +65,10 @@
 		8D0CB1931BDCCAF5008E9A08 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		8D0CB1951BDCD12E008E9A08 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		8D0CB1961BDCD12E008E9A08 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		8D25051F1C01EDF500753EC4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		8D2505201C01EDF500753EC4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		8D6D859E1BDD02B7009708EC /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		8D6D859F1BDD02B7009708EC /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		8D6D85A11BDD2382009708EC /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		8D6D85A21BDD2382009708EC /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		8DACA8F81BFB718800DDBD62 /* NewsNoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewsNoImage.png; sourceTree = "<group>"; };
 		8DC03AD81BFC59A600793909 /* JLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLDatabase.h; sourceTree = "<group>"; };
 		8DC03AD91BFC59A600793909 /* JLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLDatabase.m; sourceTree = "<group>"; };
@@ -160,10 +160,10 @@
 				8DC03AEA1BFCE32600793909 /* JLTabBarController.m */,
 				8DC03AE61BFCDD0300793909 /* JLNavigationController.h */,
 				8DC03AE71BFCDD0300793909 /* JLNavigationController.m */,
-				8D6D85A11BDD2382009708EC /* SearchViewController.h */,
-				8D6D85A21BDD2382009708EC /* SearchViewController.m */,
 				8D6D859E1BDD02B7009708EC /* NewsViewController.h */,
 				8D6D859F1BDD02B7009708EC /* NewsViewController.m */,
+				8D25051F1C01EDF500753EC4 /* SearchViewController.h */,
+				8D2505201C01EDF500753EC4 /* SearchViewController.m */,
 				8D0CB1761BDCAF45008E9A08 /* Images.xcassets */,
 				8D0CB1781BDCAF45008E9A08 /* LaunchScreen.xib */,
 				8D0CB1691BDCAF45008E9A08 /* Supporting Files */,
@@ -389,13 +389,13 @@
 				8D0CB1971BDCD12E008E9A08 /* News.m in Sources */,
 				8DC03AEB1BFCE32600793909 /* JLTabBarController.m in Sources */,
 				8D0CB1941BDCCAF5008E9A08 /* ImageTableViewCell.m in Sources */,
+				8D2505211C01EDF500753EC4 /* SearchViewController.m in Sources */,
 				8D01B6791BFA11BC00C32761 /* JLNetworking.m in Sources */,
 				8DC03AE81BFCDD0300793909 /* JLNavigationController.m in Sources */,
 				8D0CB16F1BDCAF45008E9A08 /* AppDelegate.m in Sources */,
 				8DC03ADA1BFC59A600793909 /* JLDatabase.m in Sources */,
 				8DC03AE51BFCC52900793909 /* BaseViewController.m in Sources */,
 				8D0CB16C1BDCAF45008E9A08 /* main.m in Sources */,
-				8D6D85A31BDD2382009708EC /* SearchViewController.m in Sources */,
 				8D6D85A01BDD02B7009708EC /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

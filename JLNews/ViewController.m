@@ -13,6 +13,7 @@
 #import "TableViewCell.h"
 #import "ImageTableViewCell.h"
 #import "JLProgressHUD.h"
+#import "SearchViewController.h"
 
 @implementation ViewController
 
@@ -97,7 +98,6 @@
             News *news = [News newsWithDict:dic];
             [weakSelf.newsArray addObject:news];
         }
-        NSLog(@"%@", [NSThread currentThread]);
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_footer endRefreshing];
     } failure:^(NSError *error) {
@@ -105,5 +105,11 @@
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
+
+//- (IBAction)toSearch:(id)sender {
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    SearchViewController *searchVC = [sb instantiateViewControllerWithIdentifier:@"search"];
+//    [self.navigationController showViewController:searchVC sender:nil];
+//}
 
 @end

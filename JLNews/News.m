@@ -7,7 +7,6 @@
 //
 
 #import "News.h"
-#import <objc/runtime.h>
 
 @implementation News
 
@@ -44,7 +43,8 @@
 
 + (NSString *)parseDescription:(NSArray *)contentArray {
     for (NSString *p in contentArray) {
-        if (![p hasPrefix:@"[IMG-"] && ![p containsString:@"原标"] && [p length] > 20) {
+        if (![p hasPrefix:@"[IMG-"] && ![p containsString:@"原标"] &&
+            [p length] > 20) {
             return p;
         }
     }
