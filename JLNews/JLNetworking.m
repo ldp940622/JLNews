@@ -7,6 +7,7 @@
 //
 
 #import "JLNetworking.h"
+NSString *const kServer = @"http://139.129.22.141/api/news";
 
 @interface JLNetworking ()
 @property (strong, nonatomic) AFHTTPRequestOperationManager *manager;
@@ -34,6 +35,7 @@
 - (void)requestWithURL:(NSString *)URLString method:(JLRequestMethod)method parameter:(NSDictionary *)parameter success:(void (^)(id))successBlock failure:(void (^)(NSError *))failureBlock {
     //    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     _manager.requestSerializer.timeoutInterval = 10.0;
+    URLString = kServer;
     if (method == JLRequestGET) {
         [_manager GET:URLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
             successBlock(responseObject);
