@@ -16,6 +16,8 @@
 @property (copy, nonatomic) NSString *images;
 @property (copy, nonatomic) NSString *newsDiscription;
 @property (copy, nonatomic) NSArray *contentArray;
+@property (copy, nonatomic) NSString *datetime;
+@property (copy, nonatomic) NSString *source;
 
 + (News *)newsWithDict:(NSDictionary *)newsDict;
 @end

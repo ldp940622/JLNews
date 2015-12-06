@@ -8,18 +8,23 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ViewController.h"
-#import "JLNetworking.h"
 #import "JLDatabase.h"
 #import "TableViewCell.h"
 #import "ImageTableViewCell.h"
 #import "JLProgressHUD.h"
 #import "SearchViewController.h"
+#import "NewsViewModel.h"
+
+@interface ViewController ()
+@property (strong, nonatomic) NewsViewModel *viewModel;
+@end
 
 @implementation ViewController
 
 #pragma mark - Life Cycle
 - (void)loadView {
     [super loadView];
+    _viewModel = [[NewsViewModel alloc] init];
     __weak typeof(self) weakSelf = self;
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -41,30 +46,24 @@
 #pragma mark - TableView Method @Override
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSMutableArray *actionArray = [NSMutableArray array];
-    if (![[JLDatabase sharedManager] newsIsExist:self.newsArray[indexPath.row]]) {
-        UITableViewRowAction *starAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"收藏" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            __weak typeof(self) weakSelf = self;
-            [[JLDatabase sharedManager] insertNews:weakSelf.newsArray[indexPath.row] success:^{
-                [[JLProgressHUD sharedProgressHUD] showMessage:@"收藏成功" hideDelay:1.0];
-            } failure:^{
-                [[JLProgressHUD sharedProgressHUD] showMessage:@"收藏失败" hideDelay:1.0];
-            }];
-            [tableView setEditing:NO animated:YES];
+    UITableViewRowAction *starAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"收藏" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        __weak typeof(self) weakSelf = self;
+        [[JLDatabase sharedManager] insertNews:weakSelf.newsArray[indexPath.row] success:^{
+            [[JLProgressHUD sharedProgressHUD] showMessage:@"收藏成功" hideDelay:1.0];
+        } failure:^{
+            [[JLProgressHUD sharedProgressHUD] showMessage:@"收藏失败" hideDelay:1.0];
         }];
-        starAction.backgroundColor = [UIColor orangeColor];
-        [actionArray addObject:starAction];
-    }
-    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"不感兴趣" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        [self.newsArray removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView setEditing:NO animated:YES];
     }];
-    [actionArray addObject:deleteAction];
-    deleteAction.backgroundColor = [UIColor grayColor];
-    return actionArray;
+    starAction.backgroundColor = [UIColor orangeColor];
+    return @[starAction];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return ![[JLDatabase sharedManager] newsIsExist:self.newsArray[indexPath.row]];
 }
 
 #pragma mark - Public Method
@@ -73,16 +72,13 @@
     NSDictionary *parameter = @{ @"q" : filter };
     __weak typeof(self) weakSelf = self;
     
-    [[JLNetworking sharedManager] requestWithURL:@"http://127.0.0.1:25000/api/news" method:JLRequestGET parameter:parameter success:^(id responseObject) {
-        //        [weakSelf.newsArr removeAllObjects];
-        for (NSDictionary *dic in[responseObject objectForKey:@"objects"]) {
-            News *news = [News newsWithDict:dic];
-            [self.newsArray addObject:news];
-        }
+    [_viewModel getAllNewsWithParameter:parameter];
+    [_viewModel getReturnBlockWithSuccess:^(NSMutableArray *newsArray) {
+        weakSelf.newsArray = newsArray;
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
-    } failure:^(NSError *error) {
-        [[JLProgressHUD sharedProgressHUD] showMessage:@"网络出错,请重试." hideDelay:1.0];
+    } andFailure:^(NSString *errorMsg) {
+        [[JLProgressHUD sharedProgressHUD] showMessage:errorMsg hideDelay:1.0];
         [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
@@ -93,23 +89,15 @@
     NSDictionary *parameter = @{ @"q" : filter };
     __weak typeof(self) weakSelf = self;
     
-    [[JLNetworking sharedManager] requestWithURL:@"http://127.0.0.1:25000/api/news" method:JLRequestGET parameter:parameter success:^(id responseObject) {
-        for (NSDictionary *dic in[responseObject objectForKey:@"objects"]) {
-            News *news = [News newsWithDict:dic];
-            [weakSelf.newsArray addObject:news];
-        }
+    [_viewModel getAllNewsWithParameter:parameter];
+    [_viewModel getReturnBlockWithSuccess:^(NSMutableArray *newsArray) {
+        [weakSelf.newsArray addObjectsFromArray:newsArray];
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_footer endRefreshing];
-    } failure:^(NSError *error) {
-        [[JLProgressHUD sharedProgressHUD] showMessage:@"网络出错,请重试." hideDelay:1.0];
+    } andFailure:^(NSString *errorMsg) {
+        [[JLProgressHUD sharedProgressHUD] showMessage:errorMsg hideDelay:1.0];
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
-
-//- (IBAction)toSearch:(id)sender {
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    SearchViewController *searchVC = [sb instantiateViewControllerWithIdentifier:@"search"];
-//    [self.navigationController showViewController:searchVC sender:nil];
-//}
 
 @end

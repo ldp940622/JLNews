@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"fontSize"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"fontSize"];
+    }
     return YES;
 }
 

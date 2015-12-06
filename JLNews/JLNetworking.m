@@ -33,15 +33,15 @@ NSString *const kServer = @"http://139.129.22.141/api/news";
 }
 
 - (void)requestWithURL:(NSString *)URLString method:(JLRequestMethod)method parameter:(NSDictionary *)parameter success:(void (^)(id))successBlock failure:(void (^)(NSError *))failureBlock {
-    //    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     _manager.requestSerializer.timeoutInterval = 10.0;
-    URLString = kServer;
+    // Remote Server
+    //    URLString = kServer;
     if (method == JLRequestGET) {
         [_manager GET:URLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
             successBlock(responseObject);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             failureBlock(error);
-            NSLog(@"Error: %@", error);
+//            NSLog(@"Error: %@", error.localizedDescription);
         }];
     } else if (method == JLRequestPOST) {
         [_manager POST:URLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {

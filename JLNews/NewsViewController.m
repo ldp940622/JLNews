@@ -28,6 +28,13 @@
     [title addAttributeTextColor:[UIColor blackColor]];
     [title addAttributeFont:[UIFont boldSystemFontOfSize:18.0]];
     [_contentLabel appendTextAttributedString:title];
+    [_contentLabel appendTextAttributedString:[[NSMutableAttributedString alloc] initWithString:@"\n"]];
+    
+    NSString *datetime_source = [NSString stringWithFormat:@"\n发布时间:%@\t来源:%@",news.datetime,news.source];
+    NSMutableAttributedString *datetimeAttr = [[NSMutableAttributedString alloc] initWithString:datetime_source];
+    [datetimeAttr addAttributeTextColor:[UIColor grayColor]];
+    [datetimeAttr addAttributeFont:[UIFont boldSystemFontOfSize:14.0]];
+    [_contentLabel appendTextAttributedString:datetimeAttr];
     [_contentLabel appendTextAttributedString:[[NSMutableAttributedString alloc] initWithString:@"\n\t"]];
     
     for (NSInteger i = 0; i<news.contentArray.count; i++) {
@@ -48,8 +55,6 @@
             [_contentLabel appendTextAttributedString:[[NSMutableAttributedString alloc] initWithString:@"\n\t"]];
         }
     }
-    //    [_contentLabel appendTextAttributedString:content];
-    
     [_contentLabel sizeToFit];
     [_scrollView setContentSize:_contentLabel.frame.size];
 }
@@ -66,7 +71,6 @@
     _contentLabel.delegate = self;
     [_scrollView addSubview:_contentLabel];
     [self configLabelWith:_news];
-
     
     // Do any additional setup after loading the view.
 }
@@ -76,27 +80,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc{
-    NSLog(@"News ViewController Delloc,ScrollView");
-}
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-- (IBAction)return:(id)sender {
-    //    NSString *str = _textField.text;
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    //    _returnBlock(_textField.text);
-}
 @end

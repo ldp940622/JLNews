@@ -14,6 +14,10 @@
 + (JLDatabase *)sharedManager;
 
 - (void)insertNews:(News *)news success:(void (^)())successBlock failure:(void (^)())failureBlock;
+- (void)deleteNews:(News *)news success:(void (^)())successBlock failure:(void (^)())failureBlock;
+- (void)insertHistory:(NSString *)history success:(void (^)())successBlock failure:(void (^)())failureBlock;
 - (BOOL)newsIsExist:(News *)news;
 - (NSArray *)getStarNews;
+- (NSMutableArray *)getSearchHistory;
+
 @end

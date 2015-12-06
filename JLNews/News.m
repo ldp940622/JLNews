@@ -19,7 +19,8 @@
     news.imageArr = [News parseImageArray:newsDict[@"images"]];
     news.contentArray = [News parseContentArray:newsDict[@"content"]];
     news.newsDiscription = [News parseDescription:news.contentArray];
-    
+    news.datetime = newsDict[@"datetime"];
+    news.source = newsDict[@"source"];
     return news;
 }
 
