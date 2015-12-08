@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "News.h"
 #import "MJRefresh.h"
+#import "UITabBar+Extension.h"
 
 @interface BaseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

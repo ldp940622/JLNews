@@ -91,7 +91,7 @@ static const NSString *string = @"我是李大鹏,这是shaihdias";
         }
     } failure:^(NSError *error) {
         [_historyView reloadData];
-        [[JLProgressHUD sharedProgressHUD] showMessage:@"网络错误" hideDelay:1.0];
+        [[JLProgressHUD sharedProgressHUD] showMessage:error.localizedDescription hideDelay:1.0];
     }];
     _searchController.active = NO;
 }
@@ -173,7 +173,7 @@ static const NSString *string = @"我是李大鹏,这是shaihdias";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%@", _historyArray[indexPath.row]);
     _searchController.searchBar.text = _historyArray[indexPath.row];
-    [self.tableView reloadData];
+    [self searchBarSearchButtonClicked:_searchController.searchBar];
 }
 
 @end

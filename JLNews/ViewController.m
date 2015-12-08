@@ -49,6 +49,7 @@
     UITableViewRowAction *starAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"收藏" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         __weak typeof(self) weakSelf = self;
         [[JLDatabase sharedManager] insertNews:weakSelf.newsArray[indexPath.row] success:^{
+            [self.tabBarController.tabBar showBadgeAtIndex:1];
             [[JLProgressHUD sharedProgressHUD] showMessage:@"收藏成功" hideDelay:1.0];
         } failure:^{
             [[JLProgressHUD sharedProgressHUD] showMessage:@"收藏失败" hideDelay:1.0];

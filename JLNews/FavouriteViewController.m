@@ -44,6 +44,7 @@
 }
 
 - (void)loadNewData {
+    [self.tabBarController.tabBar removeBadgeAtIndex:1];
     NSArray *arr = [[JLDatabase sharedManager] getStarNews];
     for (NSDictionary *dic in arr) {
         [self.newsArray addObject:[News newsWithDict:dic]];
