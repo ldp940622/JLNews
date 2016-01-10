@@ -23,7 +23,6 @@
 
 @end
 
-static const NSString *string = @"我是李大鹏,这是shaihdias";
 @implementation SearchViewController
 
 - (void)loadView {

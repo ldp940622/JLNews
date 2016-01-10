@@ -10,8 +10,8 @@
 
 @implementation UITabBar (Extension)
 
-- (void)showBadgeAtIndex:(NSInteger)index{
-    if (![self isBadgeExistAtIndex:index]) {
+- (void)showBadgeAtIndex:(NSInteger)index {
+    if ([self isBadgeExistAtIndex:index]) {
         return;
     }
     UIView *badgeView = [[UIView alloc] initWithFrame:CGRectZero];

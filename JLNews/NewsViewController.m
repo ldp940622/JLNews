@@ -12,7 +12,7 @@
 #import "TYAttributedLabel.h"
 #import "JLDatabase.h"
 
-@interface NewsViewController ()<TYAttributedLabelDelegate>
+@interface NewsViewController () <TYAttributedLabelDelegate>
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) TYAttributedLabel *contentLabel;
 
@@ -20,7 +20,7 @@
 
 @implementation NewsViewController
 
-- (void)configLabelWith:(News *)news{
+- (void)configLabelWith:(News *)news {
     _contentLabel.characterSpacing = 5;
     _contentLabel.linesSpacing = 5;
     _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -30,25 +30,25 @@
     [_contentLabel appendTextAttributedString:title];
     [_contentLabel appendTextAttributedString:[[NSMutableAttributedString alloc] initWithString:@"\n"]];
     
-    NSString *datetime_source = [NSString stringWithFormat:@"\n发布时间:%@\t来源:%@",news.datetime,news.source];
+    NSString *datetime_source = [NSString stringWithFormat:@"\n发布时间:%@\t来源:%@", news.datetime, news.source];
     NSMutableAttributedString *datetimeAttr = [[NSMutableAttributedString alloc] initWithString:datetime_source];
     [datetimeAttr addAttributeTextColor:[UIColor grayColor]];
     [datetimeAttr addAttributeFont:[UIFont boldSystemFontOfSize:14.0]];
     [_contentLabel appendTextAttributedString:datetimeAttr];
     [_contentLabel appendTextAttributedString:[[NSMutableAttributedString alloc] initWithString:@"\n\t"]];
     
-    for (NSInteger i = 0; i<news.contentArray.count; i++) {
+    for (NSInteger i = 0; i < news.contentArray.count; i++) {
         NSString *string = news.contentArray[i];
         if ([string hasPrefix:@"[IMG-"]) {
             //            NSString *a = [string substringWithRange:NSMakeRange(5, 1)];
             NSInteger imageIndex = [[string substringWithRange:NSMakeRange(5, 1)] integerValue];
             TYImageStorage *imageUrlStorage = [[TYImageStorage alloc] init];
             imageUrlStorage.imageURL = [NSURL URLWithString:news.imageArr[imageIndex]];
-            imageUrlStorage.size = CGSizeMake(CGRectGetWidth(_contentLabel.frame), 343*CGRectGetWidth(_contentLabel.frame)/600);
+            imageUrlStorage.size = CGSizeMake(CGRectGetWidth(_contentLabel.frame), 343 * CGRectGetWidth(_contentLabel.frame) / 600);
+            imageUrlStorage.placeholdImageName = @"NewsNoImage.png";
             [_contentLabel appendTextStorage:imageUrlStorage];
             [_contentLabel appendTextAttributedString:[[NSMutableAttributedString alloc] initWithString:@"\n\t"]];
-        }
-        else{
+        } else {
             NSMutableAttributedString *content = [[NSMutableAttributedString alloc] initWithString:news.contentArray[i]];
             [content addAttributeFont:[UIFont systemFontOfSize:16.0]];
             [_contentLabel appendTextAttributedString:content];
@@ -59,14 +59,13 @@
     [_scrollView setContentSize:_contentLabel.frame.size];
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"新闻详情";
     self.view.backgroundColor = [UIColor whiteColor];
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_scrollView];
-    _contentLabel = [[TYAttributedLabel alloc]initWithFrame:CGRectMake(10, 0, CGRectGetWidth(self.view.frame) - 20, 0)];
+    _contentLabel = [[TYAttributedLabel alloc] initWithFrame:CGRectMake(10, 0, CGRectGetWidth(self.view.frame) - 20, 0)];
     
     _contentLabel.delegate = self;
     [_scrollView addSubview:_contentLabel];

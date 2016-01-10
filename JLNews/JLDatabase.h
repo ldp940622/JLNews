@@ -19,5 +19,6 @@
 - (BOOL)newsIsExist:(News *)news;
 - (NSArray *)getStarNews;
 - (NSMutableArray *)getSearchHistory;
+- (BOOL)historyIsExist:(NSString *)history;
 
 @end

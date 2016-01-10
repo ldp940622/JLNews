@@ -55,9 +55,13 @@
 }
 
 #pragma mark - Public Method
-- (void)insertNews:(News *)news success:(void (^)())successBlock failure:(void (^)())failureBlock {
+- (void)insertNews:(News *)news
+           success:(void (^)())successBlock
+           failure:(void (^)())failureBlock {
     NSString *insertSQL = @"INSERT INTO NEWS (newsID,title,images,content,datetime,source) values (?,?,?,?,?,?)";
-    if ([_newsDB executeUpdate:insertSQL, news.newsID, news.title, news.images, news.content, news.datetime, news.source]) {
+    if ([_newsDB executeUpdate:insertSQL, news.newsID,
+         news.title, news.images, news.content,
+         news.datetime, news.source]) {
         successBlock();
     } else {
         failureBlock();
@@ -68,8 +72,7 @@
     NSString *deleteSQL = @"DELETE FROM NEWS WHERE newsID = ?";
     if ([_newsDB executeUpdate:deleteSQL, news.newsID]) {
         successBlock();
-    }
-    else{
+    } else {
         failureBlock();
     }
 }
@@ -89,18 +92,29 @@
     NSString *getNewsSQL = @"SELECT * FROM NEWS ORDER BY id ASC";
     FMResultSet *result = [_newsDB executeQuery:getNewsSQL];
     while ([result next]) {
-        NSDictionary *newsDic = @{ @"id" : [NSNumber numberWithInt:[result intForColumn:@"newsID"]],
-                                   @"title" : [result stringForColumn:@"title"],
-                                   @"images" : [result stringForColumn:@"images"],
-                                   @"content" : [result stringForColumn:@"content"],
-                                   @"datetime" : [result stringForColumn:@"datetime"],
-                                   @"source" : [result stringForColumn:@"source"] };
+        NSDictionary *newsDic = [NSDictionary dictionary];
+        newsDic = @{ @"id" :
+               [NSNumber numberWithInt:
+                [result intForColumn:@"newsID"]],
+           @"title" :
+               [result stringForColumn:@"title"],
+           @"images" :
+               [result stringForColumn:@"images"],
+           @"content" :
+               [result stringForColumn:@"content"],
+           @"datetime" :
+               [result stringForColumn:@"datetime"],
+           @"source" :
+               [result stringForColumn:@"source"] };
         [newsArray insertObject:newsDic atIndex:0];
     }
     return newsArray;
 }
 
 - (void)insertHistory:(NSString *)history success:(void (^)())successBlock failure:(void (^)())failureBlock {
+    if ([self historyIsExist:history]) {
+        return;
+    }
     NSString *insertSQL = @"INSERT INTO History (History) values (?)";
     if ([_newsDB executeUpdate:insertSQL, history]) {
         successBlock();
@@ -117,6 +131,16 @@
         [historyArray insertObject:[result stringForColumn:@"history"] atIndex:0];
     }
     return historyArray;
+}
+
+- (BOOL)historyIsExist:(NSString *)history {
+    NSString *getHistory = @"SELECT * FROM History WHERE history = (?)";
+    FMResultSet *result = [_newsDB executeQuery:getHistory, history];
+    if ([result next]) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end

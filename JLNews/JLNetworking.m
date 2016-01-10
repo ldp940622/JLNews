@@ -23,32 +23,47 @@ NSString *const kServer = @"http://139.129.22.141/api/news";
     return self;
 }
 
+// 单例
 + (JLNetworking *)sharedManager {
     static JLNetworking *sharedManager = nil;
     static dispatch_once_t onceToken;
+    // GCD实现单例
     dispatch_once(&onceToken, ^{
         sharedManager = [[JLNetworking alloc] init];
     });
     return sharedManager;
 }
 
-- (void)requestWithURL:(NSString *)URLString method:(JLRequestMethod)method parameter:(NSDictionary *)parameter success:(void (^)(id))successBlock failure:(void (^)(NSError *))failureBlock {
+- (void)requestWithURL:(NSString *)URLString
+                method:(JLRequestMethod)method
+             parameter:(NSDictionary *)parameter
+               success:(void (^)(id))successBlock
+               failure:(void (^)(NSError *))failureBlock {
+    // 超时时间
     _manager.requestSerializer.timeoutInterval = 10.0;
-    // Remote Server
-    //    URLString = kServer;
+    // 远程服务器
+    // URLString = kServer;
     if (method == JLRequestGET) {
-        [_manager GET:URLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [_manager GET:URLString
+           parameters:parameter
+              success:^(AFHTTPRequestOperation *operation,
+                        id responseObject) {
+            // 成功Block
             successBlock(responseObject);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation,
+                    NSError *error) {
+            // 错误Block
             failureBlock(error);
-//            NSLog(@"Error: %@", error.localizedDescription);
         }];
     } else if (method == JLRequestPOST) {
-        [_manager POST:URLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [_manager POST:URLString
+            parameters:parameter
+               success:^(AFHTTPRequestOperation *operation,
+                         id responseObject) {
             successBlock(responseObject);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation,
+                    NSError *error) {
             failureBlock(error);
-            NSLog(@"Error: %@", error);
         }];
     }
 }
